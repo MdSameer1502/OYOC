@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works | ofyourownchoice</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #f9f7f5;
+  color: #222;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  background: #fff;
+  color: #000;
+  padding: 18px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #c49a6c;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 140px auto 60px;
+  padding: 0 6%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-family: 'Playfair Display', serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 26px;
+  margin-top: 30px;
+}
+
+.card {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.25s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  display: block;
+}
+
+.card-info {
+  padding: 14px 18px 20px;
+  background: #fff;
+  border-radius: 0 0 20px 20px;
+}
+
+.card-info h3 {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.card-info p {
+  font-size: 13px;
+  color: #555;
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 0 20px;
+  color: #666;
+  font-size: 14px;
+  border-top: 1px solid #e2e2e2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ✅ RESPONSIVE FIX */
+@media (max-width: 900px) {
+  nav { gap: 10px; font-size: 12px; }
+  .section-title { font-size: 28px; }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1.2;
+    object-fit: contain;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    margin-top: 120px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">OFYOUROWNCHOICE</div>
+    <nav>
+      <a href="oyoc.html">HOME</a>
+      <a href="about1.html">ABOUT</a>
+      <a href="howitworks1.html">HOW IT WORKS</a>
+      <a href="https://ideogram.ai/" target="_blank">CREATE</a>
+      <a href="contact1.html">CONTACT</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1 class="section-title">Our Designs & Creations</h1>
+
+    <div class="grid">
+      <!-- Replace 'image1.jpg' etc. with your image names -->
+      <div class="card">
+        <img src="hiw1.jpeg" alt="Design 1">
+        <div class="card-info">
+          <h3>Client Creation</h3>
+          <p>Custom Made</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="hiw2.png" alt="Design 2">
+        <div class="card-info">
+          <h3>Custom Made</h3>
+          <p>Elegant Collection</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="hiw3.png" alt="Design 3">
+        <div class="card-info">
+          <h3>Client Design</h3>
+          <p>Made to Order</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="hiw4.png" alt="Design 4">
+        <div class="card-info">
+          <h3>Custom Made</h3>
+          <p>Perfectly Tailored</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="hiw5.png" alt="Design 5">
+        <div class="card-info">
+          <h3>Creative Sketch</h3>
+          <p>Client’s Idea</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="hiw6.png" alt="Design 6">
+        <div class="card-info">
+          <h3>Client Creation</h3>
+          <p>Unique Concept</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="hiw7.png" alt="Design 7">
+        <div class="card-info">
+          <h3>Custom Made</h3>
+          <p>Elegant Style</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="hiw8.png" alt="Design 8">
+        <div class="card-info">
+          <h3>Client Design</h3>
+          <p>One of a Kind</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 OFYOUROWNCHOICE — Crafted with Love & Creativity
+  </footer>
+
+</body>
+</html>
