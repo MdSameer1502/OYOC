@@ -3,248 +3,202 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How It Works | ofyourownchoice</title>
+  <title>Clients’ Creations | ofyourownchoice</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Playfair Display', serif; scroll-behavior: smooth; }
+    body { color: #000; background: #f9f7f5; overflow-x: hidden; }
 
-body {
-  font-family: 'Playfair Display', serif;
-  background-color: #f9f7f5;
-  color: #222;
-  overflow-x: hidden;
-}
+    /* ===== HEADER ===== */
+    header {
+      width: 100%;
+      background: #fff;
+      color: #000;
+      padding: 16px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    nav { display: flex; gap: 18px; font-family: 'Montserrat', sans-serif; font-size: 13px; letter-spacing: 0.6px; }
+    nav a { color: #000; text-decoration: none; font-weight: 500; }
+    nav .divider { color: #999; margin: 0 6px; }
+    nav a.active { color: #c49a6c; }
 
-header {
-  width: 100%;
-  background: #fff;
-  color: #000;
-  padding: 18px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
+    /* Hide header on mobile */
+    @media (max-width: 900px) { header { display: none; } }
 
-.logo {
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: 1px;
-  font-family: 'Montserrat', sans-serif;
-}
+    /* ===== PAGE CONTENT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 140px auto 60px;
+      padding: 0 6%;
+    }
+    .section-title { text-align: center; font-size: 36px; font-weight: 700; margin-bottom: 15px; }
+    .section-subtitle { text-align: center; font-size: 16px; color: #666; font-family: 'Montserrat', sans-serif; max-width: 700px; margin: 0 auto 40px; line-height: 1.6; }
 
-nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-family: 'Montserrat', sans-serif;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 26px;
+      margin-top: 30px;
+    }
 
-nav a {
-  text-decoration: none;
-  color: #000;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: color 1s;
-}
+    .card {
+      position: relative;
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
+    .card img { width: 100%; height: auto; object-fit: cover; display: block; transition: transform 0.6s ease; }
+    .card:hover img { transform: scale(1.05); }
+    .card-info { padding: 16px 18px 20px; background: #fff; border-radius: 0 0 24px 24px; }
+    .card-info h3 { font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: 600; margin-bottom: 6px; }
+    .card-info p { font-size: 13px; color: #555; font-family: 'Montserrat', sans-serif; }
 
-nav a:hover {
-  color: #c49a6c;
-}
+    /* ===== FOOTER ===== */
+    footer { text-align: center; padding: 40px 0 20px; color: #666; font-size: 14px; border-top: 1px solid #e2e2e2; background: #fff; font-family: 'Montserrat', sans-serif; }
 
-.container {
-  max-width: 1200px;
-  margin: 140px auto 60px;
-  padding: 0 6%;
-}
+    /* ===== MOBILE NAV ===== */
+    .bottom-nav { display: none; }
+    @media (max-width:900px) {
+      .bottom-nav {
+        display: flex; justify-content: space-around; align-items: center;
+        position: fixed; bottom: 0; left: 0; width: 100%;
+        background: #fff; padding: 10px 0; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 120;
+      }
+      .bottom-nav a {
+        display: flex; flex-direction: column; align-items: center;
+        text-decoration: none; color: #333; font-size: 12px; font-family: 'Montserrat', sans-serif;
+      }
+      .bottom-nav i { font-size: 20px; margin-bottom: 4px; }
+      .bottom-nav a.active, .bottom-nav a:hover { color:#000; font-weight:600; }
+    }
 
-.section-title {
-  text-align: center;
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  font-family: 'Playfair Display', serif;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 26px;
-  margin-top: 30px;
-}
-
-.card {
-  position: relative;
-  background: #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: transform 0.1s;
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  max-height: 420px;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  border-radius: 20px 20px 0 0;
-  display: block;
-}
-
-.card-info {
-  padding: 14px 18px 20px;
-  background: #fff;
-  border-radius: 0 0 20px 20px;
-}
-
-.card-info h3 {
-  font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.card-info p {
-  font-size: 13px;
-  color: #555;
-  font-family: 'Montserrat', sans-serif;
-}
-
-footer {
-  text-align: center;
-  padding: 40px 0 20px;
-  color: #666;
-  font-size: 14px;
-  border-top: 1px solid #e2e2e2;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* ✅ RESPONSIVE FIX */
-@media (max-width: 900px) {
-  nav { gap: 10px; font-size: 12px; }
-  .section-title { font-size: 28px; }
-
-  .card img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1/1.2;
-    object-fit: contain;
-    border-radius: 20px 20px 0 0;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .container {
-    margin-top: 120px;
-  }
-}
-
+    /* ===== MODAL ===== */
+    .modal {
+      display: none; position: fixed; z-index: 200; left: 0; top: 0;
+      width: 100%; height: 100%; background: rgba(0,0,0,0.6);
+      justify-content: center; align-items: center;
+    }
+    .modal-content {
+      background: #fff; color: #000; padding: 28px 36px; border-radius: 16px;
+      width: min(400px, 90%); box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+      font-family: 'Montserrat', sans-serif; text-align: center; position: relative;
+    }
+    .close-btn { position:absolute; top:10px; right:14px; font-size:22px; cursor:pointer; color:#666; }
+    .modal-content input { width:100%; padding:10px; margin-top:4px; border:1px solid #ccc; border-radius:8px; }
+    .modal-content button { margin-top:16px; padding:12px 20px; background:#000; color:#fff; border:none; border-radius:24px; cursor:pointer; font-weight:600; }
   </style>
 </head>
+
 <body>
 
+  <!-- Top Navbar -->
   <header>
-    <div class="logo">OFYOUROWNCHOICE</div>
     <nav>
-      <a href="oyoc.html">HOME</a>
-      <a href="aboutus.html">ABOUT</a>
-      <a href="howitworks2.html">HOW IT WORKS</a>
-      <a href="https://ideogram.ai/" target="_blank">CREATE</a>
-      <a href="contact1.html">CONTACT</a>
+      <a href="oyoc.html">HOME</a><span class="divider">|</span>
+      <a href="aboutus.html">ABOUT</a><span class="divider">|</span>
+      <a href="howitworks2.html" class="active">CLIENTS CREATION</a><span class="divider">|</span>
+      <a href="https://gemini.google.com/" target="_blank">CREATE</a><span class="divider">|</span>
+      <a href="#" id="uploadNavLink">UPLOAD</a><span class="divider">|</span>
+      <a href="oyoc.html#contact">CONTACT</a>
     </nav>
   </header>
-  
 
+  <!-- Main Content -->
   <div class="container">
-    <h1 class="section-title">Our Designs & Creations</h1>
+    <h1 class="section-title">Our Clients’ Creations</h1>
+    <p class="section-subtitle">
+      A glimpse into the stunning creations our clients have brought to life.<br>
+      Each design reflects their imagination, creativity, and personal style — made possible with <strong>ofyourownchoice</strong>.
+    </p>
 
     <div class="grid">
-      <!-- Replace 'image1.jpg' etc. with your image names -->
-      <div class="card">
-        <img src="hiw1.jpeg" alt="Design 1">
-        <div class="card-info">
-          <h3>Client Creation</h3>
-          <p>Custom Made</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="hiw2.png" alt="Design 2">
-        <div class="card-info">
-          <h3>Custom Made</h3>
-          <p>Elegant Collection</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="hiw3.png" alt="Design 3">
-        <div class="card-info">
-          <h3>Client Design</h3>
-          <p>Made to Order</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="hiw4.png" alt="Design 4">
-        <div class="card-info">
-          <h3>Custom Made</h3>
-          <p>Perfectly Tailored</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="hiw5.png" alt="Design 5">
-        <div class="card-info">
-          <h3>Creative Sketch</h3>
-          <p>Client’s Idea</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="hiw6.png" alt="Design 6">
-        <div class="card-info">
-          <h3>Client Creation</h3>
-          <p>Unique Concept</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="hiw7.png" alt="Design 7">
-        <div class="card-info">
-          <h3>Custom Made</h3>
-          <p>Elegant Style</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="hiw8.png" alt="Design 8">
-        <div class="card-info">
-          <h3>Client Design</h3>
-          <p>One of a Kind</p>
-        </div>
-      </div>
+      <div class="card"><img src="hiw1.jpeg"><div class="card-info"><h3>Elegant Custom Dress</h3><p>Designed from client concept</p></div></div>
+      <div class="card"><img src="hiw2.png"><div class="card-info"><h3>Luxury Outfit</h3><p>From idea to reality</p></div></div>
+      <div class="card"><img src="hiw3.png"><div class="card-info"><h3>Modern Chic</h3><p>Personalized & handcrafted</p></div></div>
+      <div class="card"><img src="hiw4.png"><div class="card-info"><h3>Classic Elegance</h3><p>Made exclusively for client</p></div></div>
+      <div class="card"><img src="hiw5.png"><div class="card-info"><h3>Creative Vision</h3><p>Inspired by client sketches</p></div></div>
+      <div class="card"><img src="hiw6.png"><div class="card-info"><h3>Unique Expression</h3><p>Custom tailored concept</p></div></div>
+      <div class="card"><img src="hiw7.png"><div class="card-info"><h3>Contemporary Style</h3><p>Designed with passion</p></div></div>
+      <div class="card"><img src="hiw8.png"><div class="card-info"><h3>One-of-a-Kind Look</h3><p>Personalized and exclusive</p></div></div>
     </div>
   </div>
 
   <footer>
-    © 2025 OFYOUROWNCHOICE — Crafted with Love & Creativity
+    © 2025 ofyourownchoice — Celebrating Creativity & Individuality
   </footer>
+
+  <!-- Mobile Bottom Nav -->
+  <div class="bottom-nav">
+    <a href="oyoc.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a href="aboutus.html"><i class="fa-solid fa-user"></i><span>About</span></a>
+    <a href="howitworks2.html" class="active"><i class="fa-solid fa-lightbulb"></i><span>Clients</span></a>
+    <a href="https://gemini.google.com/" target="_blank"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Create</span></a>
+    <a href="#" id="mobileUploadLink"><i class="fa-solid fa-upload"></i><span>Upload</span></a>
+    <a href="oyoc.html#contact"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+  </div>
+
+  <!-- Upload Modal -->
+  <div class="modal" id="uploadModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Enter your details</h2>
+      <form id="uploadForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <label for="mobile">Mobile / WhatsApp</label>
+        <input type="tel" id="mobile" required>
+        <label for="uploadInput">Upload Image / Design</label>
+        <input type="file" id="uploadInput" accept="image/*" required>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const uploadNavLink = document.getElementById('uploadNavLink');
+    const mobileUploadLink = document.getElementById('mobileUploadLink');
+    const modal = document.getElementById('uploadModal');
+    const closeModal = document.getElementById('closeModal');
+
+    function openModal(e) {
+      e.preventDefault();
+      modal.style.display = 'flex';
+    }
+
+    [uploadNavLink, mobileUploadLink].forEach(el => el && el.addEventListener('click', openModal));
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+
+    const form = document.getElementById('uploadForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch('http://localhost:5000/upload', { method: 'POST', body: formData });
+      const data = await response.text();
+      alert(data);
+      modal.style.display = 'none';
+      form.reset();
+    });
+  </script>
 
 </body>
 </html>
